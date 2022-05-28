@@ -3,8 +3,9 @@ from django.db import models
 
 # Create your models here.
 
+
 class UserInfo(models.Model):
-    tgUserId = models.IntegerField()
+    tgUserId = models.IntegerField(unique=True)
     cashBack = models.IntegerField(null=True, blank=True)
     phone = models.CharField(max_length=20, unique=True)
     inVoiceId = models.CharField(max_length=20, unique=True, null=True, blank=True)
@@ -12,3 +13,7 @@ class UserInfo(models.Model):
     cashBackDate = models.DateField(auto_now=True)
     name = models.CharField(max_length=1000, null=True, blank=True)
 
+
+class Invoice(models.Model):
+    UserId = models.IntegerField(null=True, blank=True)
+    invoiceId = models.CharField(max_length=20, unique=True)

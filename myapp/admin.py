@@ -3,8 +3,8 @@ from . import models
 
 
 # Register your models here.
-# class VoiceAdmin(admin.ModelAdmin):
-#     list_display = ['userId', 'inVoiceId', 'price', 'cashBack', 'cashBackDate', 'inVoiceDate', 'name']
+class VoiceAdmin(admin.ModelAdmin):
+    list_display = ['UserId', 'invoiceId']
 
 
 class UserAdmin(admin.ModelAdmin):
@@ -14,4 +14,4 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.UserInfo, UserAdmin)
-# admin.site.register(models.Voice, VoiceAdmin)
+admin.site.register(models.Invoice, VoiceAdmin)
